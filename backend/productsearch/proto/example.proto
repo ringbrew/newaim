@@ -1,0 +1,43 @@
+syntax = "proto3";
+package example;
+
+option go_package = "github.com/ringbrew/newaim/productsearch/export/example";
+
+message Example{
+    string id = 1;// @gotags: remark:"id"
+    string createTime = 2;// @gotags: remark:"创建时间"
+    string updateTime = 3;// @gotags: remark:"更新时间"
+}
+
+message ExampleById{
+    string id = 1;
+}
+
+message QueryRequest{
+    int64 skip = 1;
+    int64 limit = 2;
+    repeated string sort = 3;
+    string word = 4;
+}
+
+message QueryResponse{
+    int64 total = 1;
+    repeated Example data = 2;
+}
+
+message OpResp{
+    int64 code = 1;
+    string msg = 2;
+}
+
+service Service{
+    rpc Get(ExampleById) returns (Example){};
+
+    rpc Create(Example) returns (OpResp){};
+
+    rpc Update(Example) returns (OpResp){};
+
+    rpc Delete(ExampleById) returns (OpResp){};
+
+    rpc Query(QueryRequest) returns (QueryResponse){};
+}

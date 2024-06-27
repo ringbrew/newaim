@@ -1,0 +1,4 @@
+package product
+
+func init() {
+}

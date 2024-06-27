@@ -1,0 +1,25 @@
+.header1 {
+    background: #942FFB;
+    height: 75px;
+}
+
+.header2 {
+    background: #3B1364;
+    height: 64px;
+}
+
+.search {
+    height: 44px;
+    text-indent: 39px;
+    background-color: #591C97;
+    color: #fff;
+    font-family: 'Scto Grotesk A';
+    font-weight: 400;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    vertical-align: baseline;
+    font-size: 14px !important;
+    margin: 10px 0;
+    text-shadow: none;
+}
